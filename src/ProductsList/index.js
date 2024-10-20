@@ -11,6 +11,11 @@ import  product3 from '../Assets/product3.png'
 const ProductsList = ({ setShowFilters }) => {
 //   const [sortBy, setSortBy] = useState('size');
   const [openFilters, setOpenFilters] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [showAddToCartModal, setShowAddToCartModal] = useState(false);
+  const [showOrderPlacedModal, setShowOrderPlacedModal] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1); // Pagination state
+  const productsPerPage = 9;
   const [products] = useState([
     // Sample product data
     { id: 1, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299,imageUrl: product1},
@@ -22,15 +27,24 @@ const ProductsList = ({ setShowFilters }) => {
     { id: 7, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299,imageUrl: product1},
     { id: 8, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299 ,imageUrl: product2},
     { id: 9, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299 ,imageUrl: product3},
+    { id: 10, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299,imageUrl: product1},
+    { id: 11, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299 ,imageUrl: product2},
+    { id: 12, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299 ,imageUrl: product3},
+    { id:13, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299,imageUrl: product1},
+    { id: 14, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299 ,imageUrl: product2},
+    { id: 15, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299 ,imageUrl: product3},
+    // { id: 16, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299,imageUrl: product1},
+    // { id: 17, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299 ,imageUrl: product2},
+    // { id: 18, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299 ,imageUrl: product3},
     
   ]);
+
+  const totalPages = Math.ceil(products.length / productsPerPage);
   const options = ['Size' , 'Popularity' , 'Price,Low- High', 'Price,High- Low']
 
   const navigate = useNavigate();
 
-  const [selectedProduct, setSelectedProduct] = useState(null);
-  const [showAddToCartModal, setShowAddToCartModal] = useState(false);
-  const [showOrderPlacedModal, setShowOrderPlacedModal] = useState(false);
+ 
 
   const toggleFilter = () => {
     setOpenFilters(!openFilters)
@@ -57,6 +71,19 @@ const ProductsList = ({ setShowFilters }) => {
     setShowOrderPlacedModal(false);
     navigate('/'); // Navigate to home page
   };
+
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const handleNextPage = () => {
+    if (currentPage < totalPages) setCurrentPage(currentPage + 1);
+  };
+  const handlePrevPage = () => {
+    if (currentPage > 1) setCurrentPage(currentPage - 1);
+  };
+
+  const indexOfLastProduct = currentPage * productsPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+  const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
 
   return (
     <div className="products-list-container">
@@ -90,7 +117,7 @@ const ProductsList = ({ setShowFilters }) => {
         </button>
       </div>
       <div className="products-list">
-        {products.map((product) => (
+        {currentProducts.map((product) => (
           <ProductCard
             key={product.id}
             product={product}
@@ -98,6 +125,26 @@ const ProductsList = ({ setShowFilters }) => {
             onViewProduct={handleViewProduct}
           />
         ))}
+      </div>
+
+
+      {/* Pagination */}
+      <div className="pagination">
+        <button className="pagination-button" onClick={handlePrevPage} disabled={currentPage === 1}>
+          Prev
+        </button>
+        {Array.from({ length: totalPages }, (_, index) => (
+          <button
+            key={index + 1}
+            onClick={() => paginate(index + 1)}
+            className={currentPage === index + 1 ? 'active' : ''}
+          >
+            {index + 1}
+          </button>
+        ))}
+        <button className="pagination-button" onClick={handleNextPage} disabled={currentPage === totalPages}>
+          Next
+        </button>
       </div>
 
 
@@ -126,7 +173,7 @@ const ProductsList = ({ setShowFilters }) => {
             <h3>Congratulations, Order Placed!</h3>
             <img src={product1} alt="Order Placed" className="plant-image" />
             <p>Thank you for choosing Chaperone services. We will soon get in touch with you!</p>
-            <button onClick={handleContinueShopping}>Continue Shopping</button>
+            <button className='continue-shopping-button' onClick={handleContinueShopping}>Continue Shopping</button>
           </div>
         </div>
       )}

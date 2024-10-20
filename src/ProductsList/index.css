@@ -71,6 +71,21 @@
   }
   
 
+.pagination{
+    text-align: center;
+}
+
+.pagination-button{
+    background-color: #2f872f;
+    color: white;
+    margin-left: 5px;
+}
+
+.active{
+    background-color: transparent;
+    border: 1px solid #2f872f;
+    color: #2f872f;
+}
 
   /* Overlay for modals */
 .modal-overlay {
@@ -91,7 +106,8 @@
     background: white;
     border-radius: 10px;
     width: 90%;
-    max-width: 400px;
+    max-width: 453px;
+    max-height: 661px;
     padding: 20px;
     text-align: center;
     position: relative; /* For the close icon */
@@ -141,8 +157,7 @@
   }
   
   /* Continue Shopping button */
-  .modal-buttons button,
-  button {
+  .modal-buttons button ,.continue-shopping-button {
     background-color: #2f872f;
     color: white;
     padding: 10px 20px;
