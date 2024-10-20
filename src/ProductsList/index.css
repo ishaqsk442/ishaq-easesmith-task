@@ -1,0 +1,174 @@
+.products-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative; /* Ensure the dropdown opens relative to this */
+  }
+  
+  .products-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .sort-by-cont {
+    
+    color: white;
+    max-width: 139px;
+    /* height: 36px; */
+    position: relative; /* Parent container should be relative */
+    display: flex;
+    flex-direction: column;
+    background-color: #165315;
+    z-index: 1;
+    /* text-align: center; */
+    padding-top:6px;
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+  
+  .sort-by {
+    display: flex;
+    justify-content: space-between;
+    
+  }
+  .sort-by p{
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0px;
+    
+  }
+  
+  .sort-by button {
+    background: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .sortby-menu {
+    position: absolute; /* Absolute positioning to ensure it doesn't affect layout */
+    top: 100%; /* Make it open below the "SORT BY" button */
+    left: 0;
+    background-color: #165315;
+    z-index: 1000; /* High z-index to overlay above other content */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 5px;
+  }
+  
+  .sort-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .sort-option input {
+    margin-right: 5px;
+  }
+  
+
+
+  /* Overlay for modals */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it appears above all content */
+  }
+  
+  /* Modal content */
+  .modal {
+    background: white;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    padding: 20px;
+    text-align: center;
+    position: relative; /* For the close icon */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease; /* Fade-in effect */
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Close button for modals */
+  .close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: #333;
+  }
+  
+  /* Modal header for the "Order Placed" */
+  .modal h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  /* Horizontal line for separation */
+  hr {
+    border: 1px solid #e0e0e0;
+    margin-bottom: 15px;
+  }
+  
+  /* Plant image styling */
+  .plant-image {
+    width: 80px;
+    margin: 20px auto;
+  }
+  
+  /* Continue Shopping button */
+  .modal-buttons button,
+  button {
+    background-color: #2f872f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 0;
+    width: 100%;
+  }
+  
+  .modal-buttons button:hover,
+  button:hover {
+    background-color: #246c24;
+  }
+  
+  /* Modal buttons container */
+  .modal-buttons {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+  }
+  
+  @media (max-width: 768px) {
+    .modal {
+      width: 90%;
+      max-width: 350px;
+    }
+  }
+  

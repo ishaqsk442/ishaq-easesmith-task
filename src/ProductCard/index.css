@@ -1,0 +1,101 @@
+.product-card{
+    
+    border: 1px 0px 0px 0px;
+    opacity: 0px;
+    flex-grow: 1;
+}
+.product-image{
+    max-width: 268px;
+    max-height: 320px;
+    border: 1px solid black;
+    position: relative;
+}
+.product-image img{
+    height: 242px;
+    width: 255px;
+}
+.wishlist-button{
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+.view-product{
+    width: 100%;
+    height: 36px;
+    background-color: #165315;
+    color: white;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+
+}
+
+.product-details{
+    padding: 10px;
+    line-height: 30px;
+}
+.product-details h2{
+    margin: 0px;
+}
+.product-details p{
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 400;
+    color: #838383;
+    margin: 0px;
+}
+.rating{
+    display: flex;
+    align-items: center; 
+}
+.rating p{
+    font-size: 18px;
+    font-weight: 600;
+    margin-left: 5px;
+}
+.price-cont{
+    display: flex;
+}
+.price-cont span{
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 600;
+    color: #5E5A5A;
+    margin-right: 5px;
+
+
+}
+.price-cont .discount{
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: lighter;
+    color: #5E5A5A;
+    margin-right: 5px;
+    text-decoration: line-through;
+}
+
+.actions button{
+    height: 39px;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: left;
+    border-radius: 10px;
+}
+.addto-cart{
+    background-color: #165315;
+    color: white;
+    margin-right:5px;
+    max-width: 149px;
+
+}
+.but-rent{
+    max-width: 149px;
+    background-color: transparent;
+    border: 1px solid #165315;
+    color: #165315;
+}

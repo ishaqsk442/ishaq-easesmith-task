@@ -1,0 +1,56 @@
+.filter-container{
+    position: relative;
+    background: #F0FFE5;
+    height: 687px;
+    padding: 10px;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.36px;
+}
+
+.close-icon {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+@media (min-width:769px) {
+    .close-icon{
+        display: none;
+    }
+}
+.filter-header{
+    
+    border-bottom: 1px solid #A8A8A8;
+    display: flex;
+    justify-content: space-between;
+}
+.filter-header button{
+    background-color: transparent;
+    border: none;
+}
+.filter-item{
+    border-bottom: 1px solid #A8A8A8;
+}
+
+.filter-name{
+    display: flex;
+    justify-content: space-between;
+}
+.filter-name button{
+    background: transparent;
+    border: none;
+}
+.filter-options{
+    padding-left: 10px;
+}
+.option-item{
+    display: flex;
+    border-bottom: 1px solid #A8A8A8;
+}

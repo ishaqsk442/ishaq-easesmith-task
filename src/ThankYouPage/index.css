@@ -1,0 +1,24 @@
+.thank-you-container{
+    background-image: url("https://img.freepik.com/free-vector/copy-space-bokeh-spring-lights-background_52683-55649.jpg?w=740&t=st=1729432103~exp=1729432703~hmac=30cea5cb708908d37f01c9bb8a60a61a07829617cd34ab2037e0649856a08ecc");
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.thank-you{
+    margin: auto;
+    text-align: center;
+}
+h1{
+    color: #153812;
+}
+.thank-you button{
+    background-color: #165315;
+    color: white;
+    font-weight: 500;
+    height: 50px;
+    font-size: 20px;
+    font-family: "Roboto";
+}

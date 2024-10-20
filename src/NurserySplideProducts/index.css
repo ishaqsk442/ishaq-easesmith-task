@@ -1,0 +1,31 @@
+.nursery-container {
+    min-width: 100%;
+    margin: 0 auto;
+  }
+  @media (max-width:768px) {
+    .nursery-container{
+        max-width: 900px;
+    }
+  }
+  
+  .nursery-item {
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .nursery-image {
+    width: 120px;
+    border-radius: 50%;
+    height: 120px;
+    left: 82px;
+    gap: 0px;
+    opacity: 0px;
+  }
+  
+  p {
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+  }
+  

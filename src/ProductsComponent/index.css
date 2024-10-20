@@ -1,0 +1,66 @@
+.app-container{
+    display: flex;
+    gap: 20px;
+}
+.filter-side {
+    width: 304px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .mobile-show {
+    transform: translateX(0);
+  }
+  
+  .mobile-hide {
+    transform: translateX(-100%);
+  }
+  .product-side {
+    width: 90%;
+  }
+
+  .hamburger-icon {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  /* Hide the filter for larger screens */
+  @media (min-width: 768px) {
+    .hamburger-icon {
+      display: none;
+    }
+  
+    .filter-side {
+      transform: translateX(0);
+    }
+  }
+  
+  /* Show filter as a sliding sidebar for smaller screens */
+  @media (max-width: 767px) {
+    .filter-side {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      
+      z-index: 10;
+      
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-in-out;
+    }
+  
+    .mobile-show {
+      transform: translateX(0);
+    }
+  
+    .mobile-hide {
+      transform: translateX(-1000%);
+    }
+  
+    .product-side {
+      margin-top: 20px;
+      width: 100%;
+      border: 1px solid red;
+    }
+  }

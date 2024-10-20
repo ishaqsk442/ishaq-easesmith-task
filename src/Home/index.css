@@ -1,0 +1,9 @@
+.Home-container{
+    padding-left: 64px;
+    /* padding-right: 64px; */
+}
+@media (max-width:768px) {
+    .Home-container{
+        padding-left: 32px;
+    }
+}
