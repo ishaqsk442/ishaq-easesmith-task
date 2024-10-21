@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import './index.css'; // Add your styles
 import { FaSearch } from 'react-icons/fa'; // Font Awesome search icon
-// import searchlogo from '../Assets/searchlogo.png'
-
+const searchlogo = 'https://res.cloudinary.com/dpetyh8cc/image/upload/v1729486237/searchlogo_gxpslv.png';
 const SearchProduct = ({ onSearch }) => {
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -25,7 +24,7 @@ const SearchProduct = ({ onSearch }) => {
             onChange={handleSearch}
           />
           {/* <img src={searchlogo} alt="Logo" className="logo" /> */}
-          <img src='/Assets/searchlogo.png' alt="Logo" className="logo" />
+          <img src={searchlogo} alt="Logo" className="logo" />
         </div>
       </div>
     </div>

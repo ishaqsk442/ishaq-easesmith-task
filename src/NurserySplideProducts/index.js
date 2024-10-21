@@ -1,41 +1,21 @@
 import React from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css';
-import './index.css'; // Optional: add your custom styles
+import './index.css';
 
-// import plant1 from '../Assets/plant1.png'
-// import plant2 from '../Assets/plant2.png'
-// import plant3 from '../Assets/plant3.png'
-// import plant4 from '../Assets/plant4.png'
-// import plant5 from '../Assets/plant5.png'
-// import plant6 from '../Assets/plant6.png'
-// import plant7 from '../Assets/plant7.png'
-// import plant8 from '../Assets/plant8.png'
-// import plant9 from '../Assets/plant9.png'
-// import plant10 from '../Assets/plant10.png'
 const Nursery = () => {
   // Sample data for the Splide items
   const nurseryItems = [
-    { id: 1, name: 'Lorem ipsum dolor sit amet. Aut ipsam illum et nostrum', image: '/Assets/plant1.png' },
-    // { id: 2, name: 'Lorem ipsum dolor sit amet. Aut ipsam illum et nostrum', image: plant2 },
-    // { id: 3, name: 'Lorem ipsum dolor sit amet. Aut ipsam illum et nostrum', image: plant3 },
-    // { id: 4, name: 'Lorem ipsum dolor sit amet. Aut ipsam illum et nostrum', image: plant4 },
-    // { id: 5, name: 'Lorem ipsum dolor sit amet. Aut ipsam illum et nostrum', image: plant5},
-    // { id: 6, name: 'Lorem ipsum dolor sit amet. Aut ipsam illum et nostrum', image: plant6},
-    // { id: 7, name: 'Lorem ipsum dolor sit amet. Aut ipsam illum et nostrum', image: plant7 },
-    // { id: 8, name: 'Lorem ipsum dolor sit amet. Aut ipsam illum et nostrum', image: plant8 },
-    // { id: 9, name: 'Lorem ipsum dolor sit amet. Aut ipsam illum et nostrum', image: plant9 },
-    // { id: 10, name: 'Lorem ipsum dolor sit amet. Aut ipsam illum et nostrum', image: plant10 },
-    { id: 2, name: 'Lorem ipsum dolor sit amet. Aut ipsam illum et nostrum', image: '/Assets/plant2.png' },
-{ id: 3, name: 'Lorem ipsum dolor sit amet. Aut ipsam illum et nostrum', image: '/Assets/plant3.png' },
-{ id: 4, name: 'Lorem ipsum dolor sit amet. Aut ipsam illum et nostrum', image: '/Assets/plant4.png' },
-{ id: 5, name: 'Lorem ipsum dolor sit amet. Aut ipsam illum et nostrum', image: '/Assets/plant5.png' },
-{ id: 6, name: 'Lorem ipsum dolor sit amet. Aut ipsam illum et nostrum', image: '/Assets/plant6.png' },
-{ id: 7, name: 'Lorem ipsum dolor sit amet. Aut ipsam illum et nostrum', image: '/Assets/plant7.png' },
-{ id: 8, name: 'Lorem ipsum dolor sit amet. Aut ipsam illum et nostrum', image: '/Assets/plant8.png' },
-{ id: 9, name: 'Lorem ipsum dolor sit amet. Aut ipsam illum et nostrum', image: '/Assets/plant9.png' },
-{ id: 10, name: 'Lorem ipsum dolor sit amet. Aut ipsam illum et nostrum', image: '/Assets/plant10.png' },
-
+    { id: 1, name: 'Lorem ipsum dolor sit amet. Aut ipsam illum et nostrum', image: 'https://res.cloudinary.com/dpetyh8cc/image/upload/v1729486056/plant1_aqosr0.png' },
+    { id: 2, name: 'Lorem ipsum dolor sit amet. Aut ipsam illum et nostrum', image: 'https://res.cloudinary.com/dpetyh8cc/image/upload/v1729486121/plant2_rum11o.png'},
+    { id: 3, name: 'Lorem ipsum dolor sit amet. Aut ipsam illum et nostrum', image: "https://res.cloudinary.com/dpetyh8cc/image/upload/v1729486132/plant3_h4fvxq.png" },
+    { id: 4, name: 'Lorem ipsum dolor sit amet. Aut ipsam illum et nostrum', image: 'https://res.cloudinary.com/dpetyh8cc/image/upload/v1729486153/plant4_nxcmup.png' },
+    { id: 5, name: 'Lorem ipsum dolor sit amet. Aut ipsam illum et nostrum', image: 'https://res.cloudinary.com/dpetyh8cc/image/upload/v1729486182/plant5_sifoiy.png'},
+    { id: 6, name: 'Lorem ipsum dolor sit amet. Aut ipsam illum et nostrum', image: 'https://res.cloudinary.com/dpetyh8cc/image/upload/v1729486183/plant6_jj1a7x.png'},
+    { id: 7, name: 'Lorem ipsum dolor sit amet. Aut ipsam illum et nostrum', image: 'https://res.cloudinary.com/dpetyh8cc/image/upload/v1729486188/plant7_xpvrl4.png' },
+    { id: 8, name: 'Lorem ipsum dolor sit amet. Aut ipsam illum et nostrum', image: 'https://res.cloudinary.com/dpetyh8cc/image/upload/v1729486238/plant8_zmixjm.png' },
+    { id: 9, name: 'Lorem ipsum dolor sit amet. Aut ipsam illum et nostrum', image: 'https://res.cloudinary.com/dpetyh8cc/image/upload/v1729486238/plant9_n3ywaq.png' },
+    { id: 10, name: 'Lorem ipsum dolor sit amet. Aut ipsam illum et nostrum', image: 'https://res.cloudinary.com/dpetyh8cc/image/upload/v1729486238/plant10_iidks6.png' },
   ];
 
   return (

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaUser, FaShoppingCart, FaBars, FaTimes } from 'react-icons/fa'; // Icons for user, cart, hamburger
 import './navbar.css'; // Include your styles
-import logo from '../Assets/logo.png'
+const logo = 'https://res.cloudinary.com/dpetyh8cc/image/upload/v1729486229/logo_nkb6bp.png';
 
 const Navbar = ({ cartItemsCount }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

@@ -4,12 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFilter} from '@fortawesome/free-solid-svg-icons';
 import './index.css';
-// import  product1 from '../Assets/product1.png'
-// import  product2 from '../Assets/product2.png'
-// import  product3 from '../Assets/product3.png'
 
 const ProductsList = ({ setShowFilters }) => {
-//   const [sortBy, setSortBy] = useState('size');
   const [openFilters, setOpenFilters] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [showAddToCartModal, setShowAddToCartModal] = useState(false);
@@ -18,61 +14,42 @@ const ProductsList = ({ setShowFilters }) => {
   const productsPerPage = 9;
   const [products] = useState([
     // Sample product data
-    { id: 1, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299,imageUrl: '/Assets/product1.png'},
-    { id: 2, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299 ,imageUrl: '/Assets/product2.png'},
-    { id: 3, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299 ,imageUrl: '/Assets/product3.png'},
-    { id: 4, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299, imageUrl: '/Assets/product1.png' },
-{ id: 5, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299 , imageUrl: '/Assets/product2.png' },
-{ id: 6, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299 , imageUrl: '/Assets/product3.png' },
-{ id: 7, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299, imageUrl: '/Assets/product1.png' },
-{ id: 8, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299 , imageUrl: '/Assets/product2.png' },
-{ id: 9, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299 , imageUrl: '/Assets/product3.png' },
-{ id: 10, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299, imageUrl: '/Assets/product1.png' },
-{ id: 11, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299 , imageUrl: '/Assets/product2.png' },
-{ id: 12, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299 , imageUrl: '/Assets/product3.png' },
-{ id: 13, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299, imageUrl: '/Assets/product1.png' },
-{ id: 14, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299 , imageUrl: '/Assets/product2.png' },
-{ id: 15, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299 , imageUrl: '/Assets/product3.png' },
-{ id: 16, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299, imageUrl: '/Assets/product1.png' },
-{ id: 17, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299 , imageUrl: '/Assets/product2.png' },
-{ id: 18, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299 , imageUrl: '/Assets/product3.png' }
+    { id: 1, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299,imageUrl: 'https://res.cloudinary.com/dpetyh8cc/image/upload/v1729486238/product1_wpky3y.png'},
+    { id: 2, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299 ,imageUrl: 'https://res.cloudinary.com/dpetyh8cc/image/upload/v1729486235/product2_ngjukf.png'},
+    { id: 3, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299 ,imageUrl: 'https://res.cloudinary.com/dpetyh8cc/image/upload/v1729486237/product3_xtowyd.png'},
+    { id: 4, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299,imageUrl: 'https://res.cloudinary.com/dpetyh8cc/image/upload/v1729486238/product1_wpky3y.png'},
+    { id: 5, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299 ,imageUrl: 'https://res.cloudinary.com/dpetyh8cc/image/upload/v1729486235/product2_ngjukf.png'},
+    { id: 6, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299 ,imageUrl: 'https://res.cloudinary.com/dpetyh8cc/image/upload/v1729486237/product3_xtowyd.png'},
+    { id: 7, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299,imageUrl: 'https://res.cloudinary.com/dpetyh8cc/image/upload/v1729486238/product1_wpky3y.png'},
+    { id: 8, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299 ,imageUrl: 'https://res.cloudinary.com/dpetyh8cc/image/upload/v1729486235/product2_ngjukf.png'},
+    { id: 9, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299 ,imageUrl: 'https://res.cloudinary.com/dpetyh8cc/image/upload/v1729486237/product3_xtowyd.png'},
+    { id: 10, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299,imageUrl: 'https://res.cloudinary.com/dpetyh8cc/image/upload/v1729486238/product1_wpky3y.png'},
+    { id: 11, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299 ,imageUrl: 'https://res.cloudinary.com/dpetyh8cc/image/upload/v1729486235/product2_ngjukf.png'},
+    { id: 12, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299 ,imageUrl: 'https://res.cloudinary.com/dpetyh8cc/image/upload/v1729486237/product3_xtowyd.png'},
+    { id: 13, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299,imageUrl: 'https://res.cloudinary.com/dpetyh8cc/image/upload/v1729486238/product1_wpky3y.png'},
+    { id: 14, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299 ,imageUrl: 'https://res.cloudinary.com/dpetyh8cc/image/upload/v1729486235/product2_ngjukf.png'},
+    { id: 15, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299 ,imageUrl: 'https://res.cloudinary.com/dpetyh8cc/image/upload/v1729486237/product3_xtowyd.png'},
+    { id: 16, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299,imageUrl: 'https://res.cloudinary.com/dpetyh8cc/image/upload/v1729486238/product1_wpky3y.png'},
+    { id: 17, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299 ,imageUrl: 'https://res.cloudinary.com/dpetyh8cc/image/upload/v1729486235/product2_ngjukf.png'},
+    { id: 18, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299 ,imageUrl: 'https://res.cloudinary.com/dpetyh8cc/image/upload/v1729486237/product3_xtowyd.png'},
+    { id: 19, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299,imageUrl: 'https://res.cloudinary.com/dpetyh8cc/image/upload/v1729486238/product1_wpky3y.png'},
+    { id: 20, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299 ,imageUrl: 'https://res.cloudinary.com/dpetyh8cc/image/upload/v1729486235/product2_ngjukf.png'},
+    { id: 21, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299 ,imageUrl: 'https://res.cloudinary.com/dpetyh8cc/image/upload/v1729486237/product3_xtowyd.png'},
+    { id: 22, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299,imageUrl: 'https://res.cloudinary.com/dpetyh8cc/image/upload/v1729486238/product1_wpky3y.png'},
+    { id: 23, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299 ,imageUrl: 'https://res.cloudinary.com/dpetyh8cc/image/upload/v1729486235/product2_ngjukf.png'},
+    { id: 24, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299 ,imageUrl: 'https://res.cloudinary.com/dpetyh8cc/image/upload/v1729486237/product3_xtowyd.png'}
 
-    // { id: 4, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299,imageUrl: product1},
-    // { id: 5, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299 ,imageUrl: product2},
-    // { id: 6, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299 ,imageUrl: product3},
-    // { id: 7, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299,imageUrl: product1},
-    // { id: 8, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299 ,imageUrl: product2},
-    // { id: 9, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299 ,imageUrl: product3},
-    // { id: 10, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299,imageUrl: product1},
-    // { id: 11, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299 ,imageUrl: product2},
-    // { id: 12, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299 ,imageUrl: product3},
-    // { id:13, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299,imageUrl: product1},
-    // { id: 14, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299 ,imageUrl: product2},
-    // { id: 15, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299 ,imageUrl: product3},
-    // { id: 16, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299,imageUrl: product1},
-    // { id: 17, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299 ,imageUrl: product2},
-    // { id: 18, name: 'Monsterra', description: 'Indoor plants, low maintenance', rating: 4.9, price: 299 ,imageUrl: product3},
-    
   ]);
 
   const totalPages = Math.ceil(products.length / productsPerPage);
   const options = ['Size' , 'Popularity' , 'Price,Low- High', 'Price,High- Low']
-
   const navigate = useNavigate();
-
- 
-
   const toggleFilter = () => {
     setOpenFilters(!openFilters)
   };
-
   const handleViewProduct = () => {
     navigate('/thank-you');
   };
-
-  
-
-
   const handleAddToCart = (product) => {
     setSelectedProduct(product);
     setShowAddToCartModal(true); // Open the first modal
@@ -153,7 +130,7 @@ const ProductsList = ({ setShowFilters }) => {
           <button
             key={index + 1}
             onClick={() => paginate(index + 1)}
-            className={currentPage === index + 1 ? 'active' : ''}
+            className={currentPage === index + 1 ? 'active' : 'inactive'}
           >
             {index + 1}
           </button>
@@ -187,7 +164,7 @@ const ProductsList = ({ setShowFilters }) => {
             <h2>Your Cart</h2>
             <hr />
             <h3>Congratulations, Order Placed!</h3>
-            <img src='/Assets/product1.png' alt="Order Placed" className="plant-image" />
+            <img src='https://res.cloudinary.com/dpetyh8cc/image/upload/v1729486238/product1_wpky3y.png' alt="Order Placed" className="plant-image" />
             <p>Thank you for choosing Chaperone services. We will soon get in touch with you!</p>
             <button className='continue-shopping-button' onClick={handleContinueShopping}>Continue Shopping</button>
           </div>
