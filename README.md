@@ -1,3 +1,7 @@
+
+Published link : https://ishaq-easesmith-task.netlify.app/
+
+
 # E-Commerce Product Listing Page
 
 ## Features
